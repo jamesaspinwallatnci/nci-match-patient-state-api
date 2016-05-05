@@ -43,10 +43,11 @@ group :development do
     gem 'web-console', '~> 2.0'
 end
 
-gem 'mongoid'
 gem 'awesome_print'
 gem 'rest-client'
 gem "facets", require: false
+
+gem 'mongoid'
 gem 'aws-sdk', '~>2'
 gem 'dynamoid', '~> 1'
 
