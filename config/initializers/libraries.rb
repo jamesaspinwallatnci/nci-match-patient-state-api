@@ -1,0 +1,7 @@
+load 'lib/util.rb'
+load 'vendor/state/internal.rb'
+load 'vendor/state/p.rb'
+load 'vendor/state/t.rb'
+load 'vendor/state/net.rb'
+load 'app/nets/patient_registration_net.rb'
+load 'lib/msg_parser.rb'

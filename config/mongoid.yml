@@ -1,9 +1,9 @@
+
 development:
   clients:
     default:
       database: newdb
-        hosts:
-          - localhost:27017
+      hosts:
+        - localhost:27017
   options:
     raise_not_found_error: false
-

@@ -1,7 +1,5 @@
-load 'init.rb' unless $init_loaded
-load 'patient_state.rb'
 
-Net.new(PatientState)
+PNet.new(PatientState)
 
 P.new('registered')
 P.new('msg_patient_registration')
@@ -50,12 +48,6 @@ T.new('receive_nucleic_acid_sendout') {
     @output.transition =  'receive_nucleic_acid_sendout'
 }
 
-T.new('render'){
-    @output.not_empty?
-}.execute{
-    @rendered.text = %Q{console.log(#{P['output'].to_h.to_json})}
-    @output.clear
-}
 
 [P['registered'],P['msg_patient_registration']] >> T['register_patient'] >>
     P['wait_for_specimen'] >> T['receive_specimen'] >>
@@ -67,6 +59,5 @@ P['msg_specimen_received'] >> T['receive_specimen']
 
 P['msg_nucleic_acid_sendout'] >> T['receive_nucleic_acid_sendout']
 
-[T['register_patient'], T['receive_specimen'],T['receive_nucleic_acid_sendout']] >> P['output'] >> T['render'] >> P['rendered']
+[T['register_patient'], T['receive_specimen'],T['receive_nucleic_acid_sendout']] >> P['output']
 
-#net.load

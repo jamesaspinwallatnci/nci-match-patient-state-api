@@ -1,4 +1,4 @@
-class PatientStatesController < ApplicationController
+class PatientStateController < ApplicationController
 
     def index
         render json: PatientState.all
