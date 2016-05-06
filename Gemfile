@@ -31,6 +31,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
     # Call 'byebug' anywhere in the code to stop execution and get a debugger console
     gem 'byebug'
+
+    # Code climate gem to generate coverage report
+    gem 'codeclimate-test-reporter', require: nil
+    gem 'simplecov', :require => false
+    gem 'simplecov-rcov'
 end
 
 group :development do
