@@ -11,6 +11,12 @@ P.new('wait_for_variant_report')
 P.new('output')
 
 P.new('msg_progression')
+P.new('msg_off_trial')
+P.new('msg_on_treatment_arm')
+P.new('msg_treatment_arm_suspended')
+P.new('msg_patient_not_eligible')
+P.new('msg_specimen_failure')
+P.new('msg_pten_ordered')
 
 T.new('is_patient_registration') {
     @message.patientStatus == 'REGISTRATION' and
@@ -72,11 +78,96 @@ T.new('is_msg_progression') {
     @message.clear
 }
 
+T.new('is_msg_off_trial') {
+    @message.patientStatus == 'OFF_TRIAL' and
+        @msg_off_trial.empty?
+}.execute {
+    @msg_off_trial.studyId = @message.studyId
+    @msg_off_trial.patientSequenceNumber = @message.patientSequenceNumber
+    @msg_off_trial.stepNumber = @message.stepNumber
+    @msg_off_trial.patientStatus = @message.patientStatus
+    @msg_off_trial.message = @message.message
+    @msg_off_trial.dateCreated = @message.dateCreated
+    @message.clear
+}
+
+T.new('is_msg_on_treatment_arm') {
+    @message.status == 'ON_TREATMENT_ARM' and
+        @msg_on_treatment_arm.empty?
+}.execute {
+    @msg_on_treatment_arm.studyId = @message.studyId
+    @msg_on_treatment_arm.message = @message.message
+    @msg_on_treatment_arm.patientSequenceNumber = @message.patientSequenceNumber
+    @msg_on_treatment_arm.status = @message.status
+    @msg_on_treatment_arm.treatmentArmName = @message.treatmentArmName
+    @msg_on_treatment_arm.stepNumber = @message.stepNumber
+    @msg_on_treatment_arm.treatmentArmId = @message.treatmentArmId
+    @message.clear
+}
+
+
+T.new('is_msg_treatment_arm_suspended') {
+    @message.status == 'TREATMENT_ARM_SUSPENDED' and
+        @msg_treatment_arm_suspended.empty?
+}.execute {
+    @msg_treatment_arm_suspended.studyId = @message.studyId
+    @msg_treatment_arm_suspended.message = @message.message
+    @msg_treatment_arm_suspended.patientSequenceNumber = @message.patientSequenceNumber
+    @msg_treatment_arm_suspended.status = @message.status
+    @msg_treatment_arm_suspended.treatmentArmName = @message.treatmentArmName
+    @msg_treatment_arm_suspended.stepNumber = @message.stepNumber
+    @msg_treatment_arm_suspended.treatmentArmId = @message.treatmentArmId
+    @message.clear
+}
+
+T.new('is_msg_patient_not_eligible') {
+    @message.status == 'NOT_ELIGIBLE' and
+        @msg_patient_not_eligible.empty?
+}.execute {
+    @msg_patient_not_eligible.studyId = @message.studyId
+    @msg_patient_not_eligible.message = @message.message
+    @msg_patient_not_eligible.patientSequenceNumber = @message.patientSequenceNumber
+    @msg_patient_not_eligible.status = @message.status
+    @msg_patient_not_eligible.treatmentArmName = @message.treatmentArmName
+    @msg_patient_not_eligible.stepNumber = @message.stepNumber
+    @msg_patient_not_eligible.treatmentArmId = @message.treatmentArmId
+    @message.clear
+}
+
+T.new('is_msg_specimen_failure') {
+    @message.message == 'SPECIMEN_FAILURE' and
+        @msg_specimen_failure.empty?
+}.execute {
+    @msg_specimen_failure.studyId = @message.studyId
+    @msg_specimen_failure.patientSequenceNumber = @message.patientSequenceNumber
+    @msg_specimen_failure.biopsySequenceNumber = @message.biopsySequenceNumber
+    @msg_specimen_failure.reportedDate = @message.reportedDate
+    @msg_specimen_failure.message = @message.message
+    @message.clear
+}
+
+T.new('is_msg_pten_ordered') {
+    @message.biomarker == 'ICCPTENs' and
+        @msg_pten_ordered.empty?
+}.execute {
+    @msg_pten_ordered.studyId = @message.studyId
+    @msg_pten_ordered.patientSequenceNumber = @message.patientSequenceNumber
+    @msg_pten_ordered.biopsySequenceNumber = @message.biopsySequenceNumber
+    @msg_pten_ordered.biomarker = @message.biomarker
+    @msg_pten_ordered.orderedDate = @message.orderedDate
+    @message.clear
+}
 
 P['message'] >> T['is_patient_registration'] >> P['msg_patient_registration']
 P['message'] >> T['is_specimen_received'] >> P['msg_specimen_received']
 P['message'] >> T['is_msg_nucleic_acid_sendout'] >> P['msg_nucleic_acid_sendout']
 P['message'] >> T['is_msg_progression'] >> P['msg_progression']
+P['message'] >> T['is_msg_off_trial'] >> P['msg_off_trial']
+P['message'] >> T['is_msg_on_treatment_arm'] >> P['msg_on_treatment_arm']
+P['message'] >> T['is_msg_treatment_arm_suspended'] >> P['msg_treatment_arm_suspended']
+P['message'] >> T['is_msg_patient_not_eligible'] >> P['msg_patient_not_eligible']
+P['message'] >> T['is_msg_specimen_failure'] >> P['msg_specimen_failure']
+P['message'] >> T['is_msg_pten_ordered'] >> P['msg_pten_ordered']
 
 T.new('register_patient') {
     @msg_patient_registration.not_empty? and

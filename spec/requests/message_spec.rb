@@ -72,14 +72,111 @@ RSpec.describe "External Requests", :type => :request do
             #     expect(response).to have_http_status(:ok)
             # end
 
-            it "Patient has taken treatment but disease has progressed." do
+            # it "Patient has taken treatment but disease has progressed." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "patientSequenceNumber": "10368",
+            #         "stepNumber": "2",
+            #         "patientStatus": "PROGRESSION",
+            #         "message": "Patient has taken treatment but disease has progressed.",
+            #         "dateCreated": "2015-11-05T07:10:05.057-05:00"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+
+            # it "Patient is now off trial." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "patientSequenceNumber": "10368",
+            #         "stepNumber": "3",
+            #         "patientStatus": "OFF_TRIAL",
+            #         "message": "Patient is now off trial.",
+            #         "dateCreated": "2015-11-06T07:10:05.057-05:00"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+
+            # it "Patient registration to assigned treatment arm." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "message": "Patient registration to assigned treatment arm EAY131-Q",
+            #         "patientSequenceNumber": "10495",
+            #         "status": "ON_TREATMENT_ARM",
+            #         "treatmentArmName": "Ado-trastuzumab emtansine (TDM1) in HER2 Amplification",
+            #         "stepNumber": "1",
+            #         "treatmentArmId": "EAY131-Q"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+
+            # it "Teatment arm is currently suspended." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "message": "Teatment arm EAY131-Q is currently suspended",
+            #         "patientSequenceNumber": "10495",
+            #         "status": "TREATMENT_ARM_SUSPENDED",
+            #         "treatmentArmName": "Ado-trastuzumab emtansine (TDM1) in HER2 Amplification",
+            #         "stepNumber": "1",
+            #         "treatmentArmId": "EAY131-Q"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+
+            # it "Patient is not eligible for treatment arm." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "message": "Patient is not eligible for treatment arm EAY131-Q",
+            #         "patientSequenceNumber": "10495",
+            #         "status": "NOT_ELIGIBLE",
+            #         "treatmentArmName": "Ado-trastuzumab emtansine (TDM1) in HER2 Amplification",
+            #         "stepNumber": "1",
+            #         "treatmentArmId": "EAY131-Q"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+
+            # it "MDA Specimen Failure Message." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "patientSequenceNumber": "101000",
+            #         "biopsySequenceNumber": "N-1-0000",
+            #         "reportedDate": "2015-11-04T07:10:05.057-05:00",
+            #         "message": "SPECIMEN_FAILURE"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+
+            it "MDA ICCPENs Assay Ordered Message." do
                 post '/patient_state', {
                     "studyId": "EAY131",
-                    "patientSequenceNumber": "10368",
-                    "stepNumber": "2",
-                    "patientStatus": "PROGRESSION",
-                    "message": "Patient has taken treatment but disease has progressed.",
-                    "dateCreated": "2015-11-05T07:10:05.057-05:00"
+                    "patientSequenceNumber": "101000",
+                    "biopsySequenceNumber": "N-1-0000",
+                    "biomarker": "ICCPTENs",
+                    "orderedDate": "2015-11-04T07:10:05.057-05:00"
                 }, {
                          "ACCEPT" => "application/json", # This is what Rails 4 accepts
                          "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts

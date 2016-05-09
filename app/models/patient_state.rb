@@ -16,6 +16,13 @@ class PatientState
     field :wait_for_variant_report, :serialized
 
     field :msg_progression, :serialized
+    field :msg_off_trial, :serialized
+    field :msg_on_treatment_arm, :serialized
+    field :msg_treatment_arm_suspended, :serialized
+    field :msg_patient_not_eligible, :serialized
+    field :msg_specimen_failure, :serialized
+    field :msg_pten_ordered, :serialized
+
     field :output, :serialized
 
     class << self
