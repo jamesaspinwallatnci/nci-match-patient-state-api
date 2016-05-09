@@ -38,9 +38,31 @@ T.new('is_specimen_received') {
     @message.clear
 }
 
+T.new('is_msg_nucleic_acid_sendout') {
+    @message.message == 'NUCLEIC_ACID_SENDOUT' and
+        @message.status == 'CONFIRMED'and
+        @msg_nucleic_acid_sendout.empty?
+}.execute {
+    @msg_nucleic_acid_sendout.studyId = @message.studyId
+    @msg_nucleic_acid_sendout.patientSequenceNumber  = @message.patientSequenceNumber
+    @msg_nucleic_acid_sendout.biopsySequenceNumber = @message.biopsySequenceNumber
+    @msg_nucleic_acid_sendout.molecularSequenceNumber = @message.molecularSequenceNumber
+    @msg_nucleic_acid_sendout.destinationSite = @message.destinationSite
+    @msg_nucleic_acid_sendout.trackingNumber  = @message.trackingNumber
+    @msg_nucleic_acid_sendout.dnaConcentration  = @message.dnaConcentration
+    @msg_nucleic_acid_sendout.cDnaConcentration = @message.cDnaConcentration
+    @msg_nucleic_acid_sendout.cDnaVolume = @message.cDnaVolume
+    @msg_nucleic_acid_sendout.reportedDate = @message.reportedDate
+    @msg_nucleic_acid_sendout.status = @message.status
+    @msg_nucleic_acid_sendout.message = @message.message
+    @message.clear
+}
+
+
 
 P['message'] >> T['is_patient_registration'] >> P['msg_patient_registration']
 P['message'] >> T['is_specimen_received'] >> P['msg_specimen_received']
+P['message'] >> T['is_msg_nucleic_acid_sendout'] >> P['msg_nucleic_acid_sendout']
 
 T.new('register_patient') {
     @msg_patient_registration.not_empty? and

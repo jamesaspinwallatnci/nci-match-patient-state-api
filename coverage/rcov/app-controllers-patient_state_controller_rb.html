@@ -25,12 +25,12 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-controllers-patient_state_controller_rb.html">app/controllers/patient_state_controller.rb</a></td>
-            <td class='right_align'><tt>30</tt></td>
+            <td class='right_align'><tt>28</tt></td>
             <td class='right_align'><tt>15</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>83.33%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>82.14%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:83px"></div>
-        <div class="uncovered" style="width:17px"></div>
+        <div class="covered" style="width:82px"></div>
+        <div class="uncovered" style="width:18px"></div>
       </div></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>66.67%</tt></div>
       <div class="percent_graph">
@@ -86,64 +86,58 @@
         <tr class="inferred">
           <td><pre><a name="line13">13</a> </pre></td>
         </tr>
-        <tr class="inferred">
-          <td><pre><a name="line14">14</a>         #id,state,processor,data = MsgParser.state_process(params)</pre></td>
-        </tr>
-        <tr class="inferred">
-          <td><pre><a name="line15">15</a> </pre></td>
+        <tr class="marked">
+          <td><pre><a name="line14">14</a>         PNet.default.load(params[&#39;patientSequenceNumber&#39;])</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line16">16</a>         PNet.default.load(params[&#39;patientSequenceNumber&#39;])</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line17">17</a>         P[&#39;message&#39;].set(&#39;message_api&#39;,params)</pre></td>
+          <td><pre><a name="line15">15</a>         P[&#39;message&#39;].set(&#39;message_api&#39;,params)</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line18">18</a> </pre></td>
+          <td><pre><a name="line16">16</a> </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line19">19</a>         respond_to do |format|</pre></td>
+          <td><pre><a name="line17">17</a>         respond_to do |format|</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line20">20</a>             format.json {</pre></td>
+          <td><pre><a name="line18">18</a>             format.json {</pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line21">21</a>                 render json: P[&#39;output&#39;].to_h</pre></td>
+          <td><pre><a name="line19">19</a>                 render json: P[&#39;output&#39;].to_h</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line22">22</a>             }</pre></td>
+          <td><pre><a name="line20">20</a>             }</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line23">23</a>         end</pre></td>
+          <td><pre><a name="line21">21</a>         end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line24">24</a>     end</pre></td>
+          <td><pre><a name="line22">22</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line25">25</a> </pre></td>
+          <td><pre><a name="line23">23</a> </pre></td>
         </tr>
         <tr class="marked">
-          <td><pre><a name="line26">26</a>     def destroy</pre></td>
+          <td><pre><a name="line24">24</a>     def destroy</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line27">27</a>         PatientState.all.map &amp;:destroy</pre></td>
+          <td><pre><a name="line25">25</a>         PatientState.all.map &amp;:destroy</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line28">28</a>         Node.delete_all</pre></td>
+          <td><pre><a name="line26">26</a>         Node.delete_all</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line29">29</a>         render json: {result: &#39;success&#39;}</pre></td>
+          <td><pre><a name="line27">27</a>         render json: {result: &#39;success&#39;}</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line30">30</a>     end</pre></td>
+          <td><pre><a name="line28">28</a>     end</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line31">31</a> end</pre></td>
+          <td><pre><a name="line29">29</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2016-05-09 15:02:08 -0400 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
+    <p>Generated on 2016-05-09 15:20:20 -0400 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
 
   </body>
 </html>
