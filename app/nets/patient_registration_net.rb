@@ -9,7 +9,8 @@ P.new('wait_for_nucleic_acid')
 P.new('msg_nucleic_acid_sendout')
 P.new('wait_for_variant_report')
 P.new('output')
-P.new('rendered')
+
+P.new('msg_progression')
 
 T.new('is_patient_registration') {
     @message.patientStatus == 'REGISTRATION' and
@@ -58,10 +59,24 @@ T.new('is_msg_nucleic_acid_sendout') {
     @message.clear
 }
 
+T.new('is_msg_progression') {
+    @message.patientStatus == 'PROGRESSION' and
+        @msg_progression.empty?
+}.execute {
+    @msg_progression.studyId = @message.studyId
+    @msg_progression.patientSequenceNumber = @message.patientSequenceNumber
+    @msg_progression.stepNumber = @message.stepNumber
+    @msg_progression.patientStatus = @message.patientStatus
+    @msg_progression.message = @message.message
+    @msg_progression.dateCreated = @message.dateCreated
+    @message.clear
+}
+
 
 P['message'] >> T['is_patient_registration'] >> P['msg_patient_registration']
 P['message'] >> T['is_specimen_received'] >> P['msg_specimen_received']
 P['message'] >> T['is_msg_nucleic_acid_sendout'] >> P['msg_nucleic_acid_sendout']
+P['message'] >> T['is_msg_progression'] >> P['msg_progression']
 
 T.new('register_patient') {
     @msg_patient_registration.not_empty? and

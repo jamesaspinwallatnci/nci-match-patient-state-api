@@ -14,6 +14,8 @@ class PatientState
     field :wait_for_nucleic_acid, :serialized
     field :msg_nucleic_acid_sendout, :serialized
     field :wait_for_variant_report, :serialized
+
+    field :msg_progression, :serialized
     field :output, :serialized
 
     class << self
