@@ -22,6 +22,14 @@ class PatientState
     field :msg_patient_not_eligible, :serialized
     field :msg_specimen_failure, :serialized
     field :msg_pten_ordered, :serialized
+    field :msg_pten_result, :serialized
+    field :msg_mlh1_ordered, :serialized
+    field :msg_mlh1_result, :serialized
+    field :msg_msh2_ordered, :serialized
+    field :msg_msh2_result, :serialized
+    field :msg_rb_ordered, :serialized
+    field :msg_rb_result, :serialized
+    field :msg_pathology_confirmation, :serialized
 
     field :output, :serialized
 

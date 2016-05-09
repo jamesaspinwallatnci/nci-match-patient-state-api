@@ -170,13 +170,138 @@ RSpec.describe "External Requests", :type => :request do
             #     expect(response).to have_http_status(:ok)
             # end
 
-            it "MDA ICCPENs Assay Ordered Message." do
+            # it "MDA ICCPENs Assay Ordered Message." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "patientSequenceNumber": "101000",
+            #         "biopsySequenceNumber": "N-1-0000",
+            #         "biomarker": "ICCPTENs",
+            #         "orderedDate": "2015-11-04T07:10:05.057-05:00"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+            #
+            # it "MDA ICCPENs Assay Result Message." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "patientSequenceNumber": "101000",
+            #         "biopsySequenceNumber": "N-1-0000",
+            #         "biomarker": "ICCPTENs",
+            #         "result": "POSITIVE",
+            #         "reportedDate": "2015-11-04T07:10:05.057-05:00"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+
+            # it "MDA MLH1 Assay Ordered Message." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "patientSequenceNumber": "101000",
+            #         "biopsySequenceNumber": "N-1-0000",
+            #         "biomarker": "ICCMLH1",
+            #         "orderedDate": "2015-11-04T07:10:05.057-05:00"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+            # 
+            # it "MDA MLH1 Assay Result Message." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "patientSequenceNumber": "101000",
+            #         "biopsySequenceNumber": "N-1-0000",
+            #         "biomarker": "ICCMLH1",
+            #         "result": "POSITIVE",
+            #         "reportedDate": "2015-11-04T07:10:05.057-05:00"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+
+            # it "MDA MSH2 Assay Ordered Message." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "patientSequenceNumber": "101000",
+            #         "biopsySequenceNumber": "N-1-0000",
+            #         "biomarker": "ICCMSH2",
+            #         "orderedDate": "2015-11-04T07:10:05.057-05:00"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+            #
+            # it "MDA MSH2 Assay Result Message." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "patientSequenceNumber": "101000",
+            #         "biopsySequenceNumber": "N-1-0000",
+            #         "biomarker": "ICCMSH2",
+            #         "result": "POSITIVE",
+            #         "reportedDate": "2015-11-04T07:10:05.057-05:00"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+
+            # it "MDA RB Assay Ordered Message." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "patientSequenceNumber": "101000",
+            #         "biopsySequenceNumber": "N-1-0000",
+            #         "biomarker": "ICCRB",
+            #         "orderedDate": "2015-11-04T07:10:05.057-05:00"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+            #
+            # it "MDA RB Assay Result Message." do
+            #     post '/patient_state', {
+            #         "studyId": "EAY131",
+            #         "patientSequenceNumber": "101000",
+            #         "biopsySequenceNumber": "N-1-0000",
+            #         "biomarker": "ICCRB",
+            #         "result": "POSITIVE",
+            #         "reportedDate": "2015-11-04T07:10:05.057-05:00"
+            #     }, {
+            #              "ACCEPT" => "application/json", # This is what Rails 4 accepts
+            #              "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
+            #          }
+            #     expect(response.content_type).to eq("application/json")
+            #     expect(response).to have_http_status(:ok)
+            # end
+
+            it "MDA Pathology Confirmation Message" do
                 post '/patient_state', {
                     "studyId": "EAY131",
                     "patientSequenceNumber": "101000",
                     "biopsySequenceNumber": "N-1-0000",
-                    "biomarker": "ICCPTENs",
-                    "orderedDate": "2015-11-04T07:10:05.057-05:00"
+                    "reportedDate": "2015-11-04T07:10:05.057-05:00",
+                    "status": "Y",
+                    "message": "PATHOLOGY_CONFIRMATION"
                 }, {
                          "ACCEPT" => "application/json", # This is what Rails 4 accepts
                          "HTTP_ACCEPT" => "application/json" # This is what Rails 3 accepts
