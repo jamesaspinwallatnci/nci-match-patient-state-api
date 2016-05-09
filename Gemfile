@@ -36,6 +36,7 @@ group :development, :test do
     gem 'codeclimate-test-reporter', require: nil
     gem 'simplecov', :require => false
     gem 'simplecov-rcov'
+    gem "rspec-rails"
 end
 
 group :development do
