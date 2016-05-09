@@ -25,8 +25,8 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-nets-patient_registration_net_rb.html">app/nets/patient_registration_net.rb</a></td>
-            <td class='right_align'><tt>350</tt></td>
-            <td class='right_align'><tt>350</tt></td>
+            <td class='right_align'><tt>348</tt></td>
+            <td class='right_align'><tt>348</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
       <div class="percent_graph">
         <div class="covered" style="width:0px"></div>
@@ -1002,108 +1002,102 @@
           <td><pre><a name="line318">318</a>         @wait_for_nucleic_acid.empty?</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line319">319</a> </pre></td>
+          <td><pre><a name="line319">319</a> }.execute {</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line320">320</a> </pre></td>
+          <td><pre><a name="line320">320</a>     @wait_for_nucleic_acid.mark = true</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line321">321</a> }.execute {</pre></td>
+          <td><pre><a name="line321">321</a>     @wait_for_specimen.clear</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line322">322</a>     @wait_for_nucleic_acid.mark = true</pre></td>
+          <td><pre><a name="line322">322</a>     @output.status = &#39;success&#39;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line323">323</a>     @wait_for_specimen.clear</pre></td>
+          <td><pre><a name="line323">323</a>     @output.transition = &#39;receive_specimen&#39;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line324">324</a>     @output.status = &#39;success&#39;</pre></td>
+          <td><pre><a name="line324">324</a> }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line325">325</a>     @output.transition = &#39;receive_specimen&#39;</pre></td>
+          <td><pre><a name="line325">325</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line326">326</a> }</pre></td>
+          <td><pre><a name="line326">326</a> T.new(&#39;receive_nucleic_acid_sendout&#39;) {</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line327">327</a> </pre></td>
+          <td><pre><a name="line327">327</a>     @msg_nucleic_acid_sendout.not_empty? and</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line328">328</a> T.new(&#39;receive_nucleic_acid_sendout&#39;) {</pre></td>
+          <td><pre><a name="line328">328</a>         @wait_for_nucleic_acid.not_empty? and</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line329">329</a>     @msg_nucleic_acid_sendout.not_empty? and</pre></td>
+          <td><pre><a name="line329">329</a>         @wait_for_variant_report.empty?</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line330">330</a>         @wait_for_nucleic_acid.not_empty? and</pre></td>
+          <td><pre><a name="line330">330</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line331">331</a>         @wait_for_variant_report.empty?</pre></td>
+          <td><pre><a name="line331">331</a> }.execute {</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line332">332</a> </pre></td>
+          <td><pre><a name="line332">332</a>     @wait_for_variant_report.mark = true</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line333">333</a> }.execute {</pre></td>
+          <td><pre><a name="line333">333</a>     @wait_for_nucleic_acid.clear</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line334">334</a>     @wait_for_variant_report.mark = true</pre></td>
+          <td><pre><a name="line334">334</a>     @output.status = &#39;success&#39;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line335">335</a>     @wait_for_nucleic_acid.clear</pre></td>
+          <td><pre><a name="line335">335</a>     @output.transition = &#39;receive_nucleic_acid_sendout&#39;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line336">336</a>     @output.status = &#39;success&#39;</pre></td>
+          <td><pre><a name="line336">336</a> }</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line337">337</a>     @output.transition = &#39;receive_nucleic_acid_sendout&#39;</pre></td>
+          <td><pre><a name="line337">337</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line338">338</a> }</pre></td>
+          <td><pre><a name="line338">338</a> [P[&#39;registered&#39;], P[&#39;msg_patient_registration&#39;]] &gt;&gt; T[&#39;register_patient&#39;] &gt;&gt;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line339">339</a> </pre></td>
+          <td><pre><a name="line339">339</a>     P[&#39;wait_for_specimen&#39;] &gt;&gt; T[&#39;receive_specimen&#39;] &gt;&gt;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line340">340</a> [P[&#39;registered&#39;], P[&#39;msg_patient_registration&#39;]] &gt;&gt; T[&#39;register_patient&#39;] &gt;&gt;</pre></td>
+          <td><pre><a name="line340">340</a>     P[&#39;wait_for_nucleic_acid&#39;] &gt;&gt; T[&#39;receive_nucleic_acid_sendout&#39;] &gt;&gt;</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line341">341</a>     P[&#39;wait_for_specimen&#39;] &gt;&gt; T[&#39;receive_specimen&#39;] &gt;&gt;</pre></td>
+          <td><pre><a name="line341">341</a>     P[&#39;wait_for_variant_report&#39;]</pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line342">342</a>     P[&#39;wait_for_nucleic_acid&#39;] &gt;&gt; T[&#39;receive_nucleic_acid_sendout&#39;] &gt;&gt;</pre></td>
+          <td><pre><a name="line342">342</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line343">343</a>     P[&#39;wait_for_variant_report&#39;]</pre></td>
+          <td><pre><a name="line343">343</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line344">344</a> </pre></td>
+          <td><pre><a name="line344">344</a> P[&#39;msg_specimen_received&#39;] &gt;&gt; T[&#39;receive_specimen&#39;]</pre></td>
         </tr>
         <tr class="uncovered">
           <td><pre><a name="line345">345</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line346">346</a> P[&#39;msg_specimen_received&#39;] &gt;&gt; T[&#39;receive_specimen&#39;]</pre></td>
+          <td><pre><a name="line346">346</a> P[&#39;msg_nucleic_acid_sendout&#39;] &gt;&gt; T[&#39;receive_nucleic_acid_sendout&#39;]</pre></td>
         </tr>
         <tr class="uncovered">
           <td><pre><a name="line347">347</a> </pre></td>
         </tr>
         <tr class="uncovered">
-          <td><pre><a name="line348">348</a> P[&#39;msg_nucleic_acid_sendout&#39;] &gt;&gt; T[&#39;receive_nucleic_acid_sendout&#39;]</pre></td>
+          <td><pre><a name="line348">348</a> [T[&#39;register_patient&#39;], T[&#39;receive_specimen&#39;], T[&#39;receive_nucleic_acid_sendout&#39;]] &gt;&gt; P[&#39;output&#39;]</pre></td>
         </tr>
         <tr class="uncovered">
           <td><pre><a name="line349">349</a> </pre></td>
         </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line350">350</a> [T[&#39;register_patient&#39;], T[&#39;receive_specimen&#39;], T[&#39;receive_nucleic_acid_sendout&#39;]] &gt;&gt; P[&#39;output&#39;]</pre></td>
-        </tr>
-        <tr class="uncovered">
-          <td><pre><a name="line351">351</a> </pre></td>
-        </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2016-05-09 19:08:36 -0400 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
+    <p>Generated on 2016-05-09 19:22:28 -0400 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
 
   </body>
 </html>

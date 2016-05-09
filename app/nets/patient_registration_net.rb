@@ -315,8 +315,6 @@ T.new('receive_specimen') {
     @msg_specimen_received.not_empty? and
         @wait_for_specimen.not_empty? and
         @wait_for_nucleic_acid.empty?
-
-
 }.execute {
     @wait_for_nucleic_acid.mark = true
     @wait_for_specimen.clear

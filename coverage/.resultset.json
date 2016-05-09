@@ -49,8 +49,8 @@
         null,
         null,
         1,
-        1,
-        1,
+        20,
+        20,
         null,
         null,
         null,
@@ -73,12 +73,12 @@
         null,
         1,
         null,
-        1,
-        1,
+        18,
+        18,
         null,
-        1,
-        1,
-        1,
+        18,
+        18,
+        18,
         null,
         null,
         null,
@@ -185,8 +185,6 @@
         0
       ],
       "/Users/jaspinwall/rails/nci-match-patient-state-api/app/nets/patient_registration_net.rb": [
-        0,
-        0,
         0,
         0,
         0,
@@ -665,6 +663,6 @@
         0
       ]
     },
-    "timestamp": 1462835316
+    "timestamp": 1462836148
   }
 }
