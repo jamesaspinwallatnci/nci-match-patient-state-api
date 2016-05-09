@@ -20,6 +20,7 @@
 require "codeclimate-test-reporter"
 require 'simplecov'
 require 'simplecov-rcov'
+require 'rails/mongoid'
 
 SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
 SimpleCov.start 'rails'

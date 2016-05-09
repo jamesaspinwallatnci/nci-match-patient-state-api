@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <title>lib/msg_parser.rb</title>
+    <link href="./assets/0.2.3/screen.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="./assets/0.2.3/print.css" media="print" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <script type="text/javascript" src="./assets/0.2.3/rcov.js"></script>
+  </head>
+  <body>
+    <h1>Nci-match-patient-state-api C0 Coverage Information - Simploco - RCov</h1>
+    <h2>lib/msg_parser.rb</h2>
+
+    <div class="report_table_wrapper">
+      <table class='report' id='report_table'>
+        <thead>
+          <tr>
+            <th class="left_align">Name</th>
+            <th class="right_align">Total Lines</th>
+            <th class="right_align">Lines of Code</th>
+            <th class="left_align">Total Coverage</th>
+            <th class="left_align">Code Coverage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="left_align"><a href="lib-msg_parser_rb.html">lib/msg_parser.rb</a></td>
+            <td class='right_align'><tt>30</tt></td>
+            <td class='right_align'><tt>30</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
+      <div class="percent_graph">
+        <div class="covered" style="width:0px"></div>
+        <div class="uncovered" style="width:100px"></div>
+      </div></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
+      <div class="percent_graph">
+        <div class="covered" style="width:0px"></div>
+        <div class="uncovered" style="width:100px"></div>
+      </div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Key</h3>
+
+    <div class="key"><pre><span class='marked'>Code reported as executed by Ruby looks like this...</span><span class='marked1'>and this: this line is also marked as covered.</span><span class='inferred'>Lines considered as run by rcov, but not reported by Ruby, look like this,</span><span class='inferred1'>and this: these lines were inferred by rcov (using simple heuristics).</span><span class='uncovered'>Finally, here's a line marked as not executed.</span></pre></div>
+
+    <h3>Coverage Details</h3>
+
+    <table class="details">
+      <tbody>
+        <tr class="uncovered">
+          <td><pre><a name="line2">2</a> class MsgParser</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line3">3</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line4">4</a>     @@state_process_hash = {</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line5">5</a>         [&quot;dateCreated&quot;, &quot;patientSequenceNumber&quot;, &quot;statudyId&quot;, &quot;stepNumber&quot;] =&gt;</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line6">6</a>             [&#39;msg_patient_registration&#39;, &#39;msg_patient_registration_processor&#39;],</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line7">7</a>         [&quot;biopsySequenceNumber&quot;, &quot;message&quot;, &quot;patientSequenceNumber&quot;, &quot;reportedDate&quot;] =&gt;</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line8">8</a>             [&#39;msg_specimen_received&#39;, &#39;msg_specimen_received_processor&#39;],</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line9">9</a>         [&quot;biopsySequenceNumber&quot;, &quot;cDnaConcentration&quot;, &quot;cDnaVolume&quot;, &quot;comment&quot;, &quot;destinationSite&quot;, &quot;dnaConcentration&quot;, &quot;dnaVolume&quot;, &quot;message&quot;, &quot;molecularSequenceNumber&quot;, &quot;patientSequenceNumber&quot;, &quot;reportedDate&quot;, &quot;trackingNumber&quot;] =&gt;</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line10">10</a>             [&#39;msg_nucleic_acid_sendout&#39;, &#39;msg_nucleic_acid_sendout_processor&#39;]</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line11">11</a>     }</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line12">12</a>     @@state_process_hash = {</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line13">13</a>         &quot;REGISTRATION&quot; =&gt;</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line14">14</a>             [&#39;msg_patient_registration&#39;, &#39;msg_patient_registration_processor&#39;],</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line15">15</a>     }</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line16">16</a>     class &lt;&lt; self</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line17">17</a>         def state_process(msg)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line18">18</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line19">19</a>             data = msg.to_hash</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line20">20</a>             data.delete(&#39;controller&#39;)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line21">21</a>             data.delete(&#39;action&#39;)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line22">22</a>             data.delete(&#39;format&#39;)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line23">23</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line24">24</a>             state, process = @@state_process_hash[data[&quot;patientStatus&quot;]]</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line25">25</a>             id = data[&#39;patientSequenceNumber&#39;]</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line26">26</a>             [id, state, process, data]</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line27">27</a>         end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line28">28</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line29">29</a> end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line30">30</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line31">31</a> puts &#39;MsgParser loaded&#39;</pre></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Generated on 2016-05-09 15:02:08 -0400 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
+
+  </body>
+</html>

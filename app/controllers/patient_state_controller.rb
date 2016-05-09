@@ -10,10 +10,10 @@ class PatientStateController < ApplicationController
 
     def create
 
-        id,state,processor,data = MsgParser.state_process(params)
+        #id,state,processor,data = MsgParser.state_process(params)
 
-        PNet.default.load(id)
-        P[state].set(processor,data)
+        PNet.default.load(params['patientSequenceNumber'])
+        P['message'].set('message_api',params)
 
         respond_to do |format|
             format.json {

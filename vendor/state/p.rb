@@ -121,7 +121,14 @@ class P
 
         processed = {by: name, source: self.class == T ? "Internal" : 'External'}
         Node.create(processed_by: processed, name: @name, at: Time.now.to_f, net: PNet.default.model.to_s, net_id: PNet.default.id, data: @internal.ostruct.to_h)
-        PNet.default.state.update_attribute(@name, @internal.ostruct.to_h)
+        begin
+            rec = PNet.default.state.update_attribute(@name, @internal.ostruct.to_h)
+        rescue => e
+            puts e.message
+            puts e.backtrace
+            exit
+        end
+
         T.fire
 
         self

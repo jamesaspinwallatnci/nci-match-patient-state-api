@@ -4,6 +4,8 @@ class PatientState
 
     include Dynamoid::Document
 
+    field :message, :serialized
+
     field :registered, :serialized
     field :msg_patient_registration, :serialized
     field :patient_registration, :serialized

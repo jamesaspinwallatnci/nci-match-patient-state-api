@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <title>lib/util.rb</title>
+    <link href="./assets/0.2.3/screen.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="./assets/0.2.3/print.css" media="print" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <script type="text/javascript" src="./assets/0.2.3/rcov.js"></script>
+  </head>
+  <body>
+    <h1>Nci-match-patient-state-api C0 Coverage Information - Simploco - RCov</h1>
+    <h2>lib/util.rb</h2>
+
+    <div class="report_table_wrapper">
+      <table class='report' id='report_table'>
+        <thead>
+          <tr>
+            <th class="left_align">Name</th>
+            <th class="right_align">Total Lines</th>
+            <th class="right_align">Lines of Code</th>
+            <th class="left_align">Total Coverage</th>
+            <th class="left_align">Code Coverage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="left_align"><a href="lib-util_rb.html">lib/util.rb</a></td>
+            <td class='right_align'><tt>94</tt></td>
+            <td class='right_align'><tt>94</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
+      <div class="percent_graph">
+        <div class="covered" style="width:0px"></div>
+        <div class="uncovered" style="width:100px"></div>
+      </div></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
+      <div class="percent_graph">
+        <div class="covered" style="width:0px"></div>
+        <div class="uncovered" style="width:100px"></div>
+      </div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Key</h3>
+
+    <div class="key"><pre><span class='marked'>Code reported as executed by Ruby looks like this...</span><span class='marked1'>and this: this line is also marked as covered.</span><span class='inferred'>Lines considered as run by rcov, but not reported by Ruby, look like this,</span><span class='inferred1'>and this: these lines were inferred by rcov (using simple heuristics).</span><span class='uncovered'>Finally, here's a line marked as not executed.</span></pre></div>
+
+    <h3>Coverage Details</h3>
+
+    <table class="details">
+      <tbody>
+        <tr class="uncovered">
+          <td><pre><a name="line2">2</a> @counter = 0</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line3">3</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line4">4</a> def t(left, right=true, description=&#39;Missing message&#39;)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line5">5</a>     message_size = 100</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line6">6</a>     description = description[0..message_size-5]+&#39;...&#39; if description.size &gt;75</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line7">7</a>     puts &quot;#{@counter+=1}) #{description}: #{&#39; &#39; * (message_size-description.size-@counter.to_s.size)}#{left == right}&quot;</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line8">8</a>     if not left == right</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line9">9</a>         raise &quot;ERROR: #{description} #{left} != #{right}&quot;</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line10">10</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line11">11</a> end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line12">12</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line13">13</a> def erby(name)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line14">14</a>     tmpl = IO.read(name)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line15">15</a>     bind = self.instance_eval(&#39;binding&#39;)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line16">16</a>     ERB.new(tmpl).result(bind)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line17">17</a> end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line18">18</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line19">19</a> class Array</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line20">20</a>     alias :old_push :&lt;&lt;</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line21">21</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line22">22</a>     def &lt;&lt;(e)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line23">23</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line24">24</a>         if (self.size&gt;0 and (e.is_a?(T) or e.is_a?(Array)) and self.all? { |n| n.is_a? P }) or</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line25">25</a>             (self.size&gt;0 and (e.is_a?(P) or e.is_a?(Array)) and self.all? { |n| n.is_a? T })</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line26">26</a>             self.each do |p|</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line27">27</a>                 p &lt;&lt; e</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line28">28</a>             end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line29">29</a>             return e</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line30">30</a>         else</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line31">31</a>             old_push(e)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line32">32</a>         end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line33">33</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line34">34</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line35">35</a>     def &gt;&gt;(e)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line36">36</a>         if (self.size&gt;0 and (e.is_a?(T) or e.is_a?(Array)) and self.all? { |n| n.is_a? P }) or</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line37">37</a>             (self.size&gt;0 and (e.is_a? P or e.is_a?(Array)) and self.all? { |n| n.is_a? T })</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line38">38</a>             self.each do |p|</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line39">39</a>                 p &gt;&gt; e</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line40">40</a>             end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line41">41</a>             e</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line42">42</a>         end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line43">43</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line44">44</a> end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line45">45</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line46">46</a> class Object</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line47">47</a>     def instance_variables_hash</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line48">48</a>         Hash[instance_variables.map { |name| [name[1..-1], instance_variable_get(name)] }]</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line49">49</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line50">50</a> end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line51">51</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line52">52</a> module Util</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line53">53</a>     def check_options(options, options_list)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line54">54</a>         @options = options.each_key { |key| options_list.include? key }</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line55">55</a>         unless @options.empty?</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line56">56</a>             unless (@options.keys - options_list).empty?</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line57">57</a>                 raise &quot;The following options are incorrect: #{options.keys-options_list}\n Allowed options are: #{options_list}&quot;</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line58">58</a>             end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line59">59</a>         end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line60">60</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line61">61</a> end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line62">62</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line63">63</a> class OpenStruct</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line64">64</a>     def clear(name=nil)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line65">65</a>         case name</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line66">66</a>             when nil</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line67">67</a>                 each_pair do |k, v|</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line68">68</a>                     delete_field(k)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line69">69</a>                 end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line70">70</a>             when String</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line71">71</a>                 delete_field(name)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line72">72</a>             when Symbol</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line73">73</a>                 delete_field(name)</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line74">74</a>             else</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line75">75</a>                 raise &quot;Error(OpenStruct): #{name.inspect} should be nil, String or Symbol&quot;</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line76">76</a>         end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line77">77</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line78">78</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line79">79</a>     def empty?</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line80">80</a>         to_h.empty?</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line81">81</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line82">82</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line83">83</a>     def not_empty?</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line84">84</a>         !empty?</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line85">85</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line86">86</a> end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line87">87</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line88">88</a> class NilClass</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line89">89</a>     def empty?</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line90">90</a>         true</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line91">91</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line92">92</a>     def not_empty?</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line93">93</a>         false</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line94">94</a>     end</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line95">95</a> end</pre></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Generated on 2016-05-09 15:02:08 -0400 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
+
+  </body>
+</html>
