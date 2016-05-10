@@ -21,12 +21,16 @@ require "codeclimate-test-reporter"
 require 'simplecov'
 require 'simplecov-rcov'
 require 'rails/mongoid'
+require 'active_record'
 
 SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
 SimpleCov.start 'rails'
 CodeClimate::TestReporter.start
 
+ActiveRecord::Migration.maintain_test_schema!
+
 RSpec.configure do |config|
+  ####config.use_transactional_fixtures = false
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

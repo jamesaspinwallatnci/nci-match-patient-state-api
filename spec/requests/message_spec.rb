@@ -3,8 +3,10 @@ require "rails_helper"
 RSpec.describe "External Requests", :type => :request do
 
     describe PatientState do
+        self.use_transactional_fixtures = false
         before(:all) do
             PatientState.delete_all
+            PatientState.create(id:'10368')
         end
 
         describe "initialized in before(:each)" do

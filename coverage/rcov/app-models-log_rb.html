@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
   <head>
-    <title>app/controllers/application_controller.rb</title>
+    <title>app/models/log.rb</title>
     <link href="./assets/0.2.3/screen.css" media="all" rel="stylesheet" type="text/css" />
     <link href="./assets/0.2.3/print.css" media="print" rel="stylesheet" type="text/css" />
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
@@ -9,7 +9,7 @@
   </head>
   <body>
     <h1>Nci-match-patient-state-api C0 Coverage Information - Simploco - RCov</h1>
-    <h2>app/controllers/application_controller.rb</h2>
+    <h2>app/models/log.rb</h2>
 
     <div class="report_table_wrapper">
       <table class='report' id='report_table'>
@@ -24,18 +24,18 @@
         </thead>
         <tbody>
           <tr>
-            <td class="left_align"><a href="app-controllers-application_controller_rb.html">app/controllers/application_controller.rb</a></td>
+            <td class="left_align"><a href="app-models-log_rb.html">app/models/log.rb</a></td>
             <td class='right_align'><tt>5</tt></td>
-            <td class='right_align'><tt>1</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class='right_align'><tt>5</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:100px"></div>
-        <div class="uncovered" style="width:0px"></div>
+        <div class="covered" style="width:0px"></div>
+        <div class="uncovered" style="width:100px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>0.00%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:100px"></div>
-        <div class="uncovered" style="width:0px"></div>
+        <div class="covered" style="width:0px"></div>
+        <div class="uncovered" style="width:100px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -50,19 +50,19 @@
 
     <table class="details">
       <tbody>
-        <tr class="marked">
-          <td><pre><a name="line2">2</a> class ApplicationController &lt; ActionController::Base</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line2">2</a> class Log &lt; ActiveRecord::Base</pre></td>
         </tr>
-        <tr class="inferred">
-          <td><pre><a name="line3">3</a>   # Prevent CSRF attacks by raising an exception.</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line3">3</a> </pre></td>
         </tr>
-        <tr class="inferred">
-          <td><pre><a name="line4">4</a>   # For APIs, you may want to use :null_session instead.</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line4">4</a>     serialize :content, Hash</pre></td>
         </tr>
-        <tr class="inferred">
-          <td><pre><a name="line5">5</a>   #protect_from_forgery with: :exception</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line5">5</a> </pre></td>
         </tr>
-        <tr class="inferred">
+        <tr class="uncovered">
           <td><pre><a name="line6">6</a> end</pre></td>
         </tr>
       </tbody>
