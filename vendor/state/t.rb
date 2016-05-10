@@ -109,7 +109,7 @@ class T
             ostruct = @internal.instance_variable_get('@'+p.name)
 
             processed = {by: @name, source: self.class == T ? "Internal" : 'External', }
-            Node.create(processed: processed, name: p.name, at: Time.now.to_f, net: PNet.default.model.to_s, net_id: PNet.default.id, data: ostruct.to_h)
+            Node.create(processed_by: processed, name: p.name, at: Time.now.to_f, net: PNet.default.model.to_s, net_id: PNet.default.id, data: ostruct.to_h)
             p.internal.instance_variables.each do |name|
                 p.internal.remove_instance_variable(name)
             end

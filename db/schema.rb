@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510181042) do
+ActiveRecord::Schema.define(version: 20160510190525) do
 
   create_table "logs", force: :cascade do |t|
     t.string   "message"
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "nodes", force: :cascade do |t|
+    t.string   "net"
+    t.string   "name"
+    t.string   "at"
+    t.string   "net_id"
+    t.string   "data"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "processed_by"
   end
 
   create_table "patient_states", force: :cascade do |t|

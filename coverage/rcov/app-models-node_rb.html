@@ -25,17 +25,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="app-models-node_rb.html">app/models/node.rb</a></td>
-            <td class='right_align'><tt>10</tt></td>
-            <td class='right_align'><tt>8</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class='right_align'><tt>17</tt></td>
+            <td class='right_align'><tt>12</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>52.94%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:100px"></div>
-        <div class="uncovered" style="width:0px"></div>
+        <div class="covered" style="width:53px"></div>
+        <div class="uncovered" style="width:47px"></div>
       </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>33.33%</tt></div>
       <div class="percent_graph">
-        <div class="covered" style="width:100px"></div>
-        <div class="uncovered" style="width:0px"></div>
+        <div class="covered" style="width:33px"></div>
+        <div class="uncovered" style="width:67px"></div>
       </div></td>
           </tr>
         </tbody>
@@ -51,39 +51,60 @@
     <table class="details">
       <tbody>
         <tr class="marked">
-          <td><pre><a name="line2">2</a> class Node</pre></td>
+          <td><pre><a name="line2">2</a> if Rails.env == &#39;production&#39;</pre></td>
         </tr>
-        <tr class="marked">
-          <td><pre><a name="line3">3</a>     include Mongoid::Document</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line3">3</a>     class Node</pre></td>
         </tr>
-        <tr class="marked">
-          <td><pre><a name="line4">4</a>     include Mongoid::Attributes::Dynamic</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line4">4</a>         include Mongoid::Document</pre></td>
         </tr>
-        <tr class="inferred">
-          <td><pre><a name="line5">5</a> </pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line6">6</a>     field :net</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line7">7</a>     field :name</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line8">8</a>     field :at</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line9">9</a>     field :net_id</pre></td>
-        </tr>
-        <tr class="marked">
-          <td><pre><a name="line10">10</a>     field :data</pre></td>
+        <tr class="uncovered">
+          <td><pre><a name="line5">5</a>         include Mongoid::Attributes::Dynamic</pre></td>
         </tr>
         <tr class="inferred">
-          <td><pre><a name="line11">11</a> end</pre></td>
+          <td><pre><a name="line6">6</a> </pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line7">7</a>         field :net</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line8">8</a>         field :name</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line9">9</a>         field :at</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line10">10</a>         field :net_id</pre></td>
+        </tr>
+        <tr class="uncovered">
+          <td><pre><a name="line11">11</a>         field :data</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line12">12</a>     end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line13">13</a> else</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line14">14</a>     class Node &lt; ActiveRecord::Base</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line15">15</a>         serialize :data</pre></td>
+        </tr>
+        <tr class="marked">
+          <td><pre><a name="line16">16</a>         serialize :processed</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line17">17</a>     end</pre></td>
+        </tr>
+        <tr class="inferred">
+          <td><pre><a name="line18">18</a> end</pre></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Generated on 2016-05-10 14:47:01 -0400 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
+    <p>Generated on 2016-05-10 17:07:57 -0400 with <a href="https://github.com/fguillen/simplecov-rcov">SimpleCov-RCov 0.2.3</a></p>
 
   </body>
 </html>

@@ -6,6 +6,7 @@ RSpec.describe "External Requests", :type => :request do
         self.use_transactional_fixtures = false
         before(:all) do
             PatientState.delete_all
+            Node.delete_all
             PatientState.create(id:'10368')
         end
 

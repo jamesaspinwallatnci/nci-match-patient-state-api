@@ -97,6 +97,25 @@
         1,
         null
       ],
+      "/Users/jaspinwall/rails/nci-match-patient-state-api/app/models/node.rb": [
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/jaspinwall/rails/nci-match-patient-state-api/app/controllers/patient_state_controller.rb": [
         1,
         null,
@@ -132,18 +151,6 @@
         null,
         null,
         null,
-        null
-      ],
-      "/Users/jaspinwall/rails/nci-match-patient-state-api/app/models/node.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
         null
       ],
       "/Users/jaspinwall/rails/nci-match-patient-state-api/app/models/biopsies.rb": [
@@ -707,6 +714,6 @@
         0
       ]
     },
-    "timestamp": 1462906021
+    "timestamp": 1462914477
   }
 }
