@@ -51,4 +51,5 @@ gem "facets", require: false
 gem 'mongoid'
 gem 'aws-sdk', '~>2'
 gem 'dynamoid', '~> 1'
+gem 'sqlite3'
 
