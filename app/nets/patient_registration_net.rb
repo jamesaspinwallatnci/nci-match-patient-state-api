@@ -26,6 +26,16 @@ P.new('msg_rb_ordered')
 P.new('msg_rb_result')
 P.new('msg_pathology_confirmation')
 
+
+PNet.default.objects.keys.each do |state|
+    if Rails.env == 'production'
+        PatientState.field state, :serialized
+    else
+        PatientState.serialize state.to_sym, JSON
+    end
+end
+
+
 T.new('is_patient_registration') {
     @message.patientStatus == 'REGISTRATION' and
         @msg_patient_registration.empty?
